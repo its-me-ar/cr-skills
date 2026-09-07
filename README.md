@@ -78,6 +78,27 @@ node .cr-skills/install.mjs
 git submodule update --init .cr-skills && node .cr-skills/install.mjs
 ```
 
+**`please make sure that the .gitmodules file is in the working tree`** — index and disk disagree (often `.gitmodules` deleted but still staged). Reset and reinstall:
+
+```bash
+git reset HEAD .cr-skills .gitmodules 2>/dev/null
+git rm --cached -f .cr-skills .gitmodules 2>/dev/null
+git submodule deinit -f .cr-skills 2>/dev/null
+rm -rf .git/modules/.cr-skills .cr-skills .gitmodules
+git config --remove-section submodule..cr-skills 2>/dev/null
+
+git submodule add https://github.com/its-me-ar/cr-skills.git .cr-skills
+git submodule update --init .cr-skills
+node .cr-skills/install.mjs
+```
+
+Then commit the submodule:
+
+```bash
+git add .gitmodules .cr-skills
+git commit -m "Add cr-skills submodule for code review"
+```
+
 ---
 
 ## Quick start (Cursor)

@@ -13,10 +13,22 @@ The agent **detects the tech stack itself**. You only choose **what to review**.
 Requires **Git** and **Node.js** (v16+). Run from the **repo you want to review**:
 
 ```bash
-git submodule add https://github.com/its-me-ar/cr-skills.git .cr-skills 2>/dev/null; git submodule update --init .cr-skills && node .cr-skills/install.mjs
+git submodule add https://github.com/its-me-ar/cr-skills.git .cr-skills
+git submodule update --init .cr-skills
+node .cr-skills/install.mjs
 ```
 
-This adds `cr-skills` as a submodule and copies `.cursor/` into your project.
+**One line** (same steps; do not hide errors with `2>/dev/null`):
+
+```bash
+git submodule add https://github.com/its-me-ar/cr-skills.git .cr-skills && git submodule update --init .cr-skills && node .cr-skills/install.mjs
+```
+
+If submodule already exists, only run:
+
+```bash
+git submodule update --init .cr-skills && node .cr-skills/install.mjs
+```
 
 **Update to latest cr-skills:**
 
@@ -40,6 +52,27 @@ node .cr-skills/install.mjs --all
 > **Why submodule + `install.mjs`?** One command works on every OS (no `cp` vs `xcopy`). Your team pins a cr-skills version in git and can update when ready.
 
 **After clone** (teammates must init submodule once):
+
+```bash
+git submodule update --init .cr-skills && node .cr-skills/install.mjs
+```
+
+### Troubleshooting
+
+**`pathspec '.cr-skills' did not match`** — submodule add failed (often hidden by `2>/dev/null`). Run the three commands separately and read the error from step 1.
+
+**`A git directory for '.cr-skills' is found locally`** — broken partial install. Reset, then add again:
+
+```bash
+git submodule deinit -f .cr-skills 2>/dev/null
+rm -rf .git/modules/.cr-skills .cr-skills
+git config --remove-section submodule..cr-skills 2>/dev/null
+git submodule add https://github.com/its-me-ar/cr-skills.git .cr-skills
+git submodule update --init .cr-skills
+node .cr-skills/install.mjs
+```
+
+**Submodule already registered** — skip `submodule add`; only run:
 
 ```bash
 git submodule update --init .cr-skills && node .cr-skills/install.mjs

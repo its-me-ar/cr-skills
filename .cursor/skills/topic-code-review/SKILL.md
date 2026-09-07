@@ -2,7 +2,7 @@
 name: topic-code-review
 description: >-
   Detects a repo's tech stack, reviews only user-shared topics, and writes a
-  simple HTML report (12px headings, 10px body). Use when the user asks for a
+  simple HTML report (14px headings, 12px body). Use when the user asks for a
   code review, topic review, HTML review report, or shares review topics.
 ---
 
@@ -32,7 +32,7 @@ Inspect the workspace. Use whatever is actually present, for example:
 - Infra: `Dockerfile*`, `compose*.yml`, CI under `.github` / `.gitlab-ci`, IaC
 - Entry points: `main.ts`, `index.ts`, `manage.py`, `cmd/`, `src/`
 
-In the HTML you may add one short intro line (10px) naming detected stack(s) and folders. Do not add a topic the user did not request.
+In the HTML you may add one short intro line (12px) naming detected stack(s) and folders. Do not add a topic the user did not request.
 
 ## 3. Phase A — Static analysis
 
@@ -69,8 +69,8 @@ Be specific. No generic praise. **No `Context:` lines.**
 
 Write `CODE-REVIEW.html` at the repo root (or the path the user specifies). Use [html-template.html](html-template.html).
 
-- `h4` **12px**: `Topic Name | Score: X/4` (user's topic name)
-- Body, lists, `strong`, `code`: **10px**
+- `h4` **14px**: `Topic Name | Score: X/4` (user's topic name)
+- Body, lists, `strong`, `code`: **12px**
 - Each user topic: **Strengths** / **Improvements** / **Suggestions** as numbered lists
 - If the user asked for a **summary** of a secondary stack (not full topics): one extra `h4` `{Stack} Review | Score: X/4` with **Key strengths**, **Main issues**, **Highest priority fixes** as bullets
 - Escape HTML. No extra tables. Chat: file path only, do not paste the HTML

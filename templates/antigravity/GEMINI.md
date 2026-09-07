@@ -19,8 +19,8 @@
 
 Write **`CODE-REVIEW.html`** at the repo root:
 
-- Headings (`h4`): **12px** — `Topic Name | Score: X/4`
-- Body, lists, code: **10px**
+- Headings (`h4`): **14px** — `Topic Name | Score: X/4`
+- Body, lists, code: **12px**
 - Per topic: **Strengths**, **Improvements**, **Suggestions** (numbered lists)
 - Optional one-line intro: detected stack(s)
 - Optional secondary-stack summary: **Key strengths**, **Main issues**, **Highest priority fixes** (bullets)

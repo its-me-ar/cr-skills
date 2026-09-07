@@ -1,4 +1,6 @@
-# cr-skill — topic-based code review for AI agents
+# cr-skills — topic-based code review for AI agents
+
+**Repository:** [github.com/its-me-ar/cr-skills](https://github.com/its-me-ar/cr-skills)
 
 Portable **code review skill pack** for AI coding agents. Point the agent at **any repository**, share **your review topics**, and get a simple **`CODE-REVIEW.html`** report.
 
@@ -27,7 +29,8 @@ Each topic includes **Strengths**, **Improvements**, **Suggestions**, and a **1�
 ### 1. Clone this repo (skill pack)
 
 ```bash
-git clone https://github.com/YOUR_ORG/cr-skill.git
+git clone https://github.com/its-me-ar/cr-skills.git
+cd cr-skills
 ```
 
 ### 2. Clone the repo you want to review
@@ -40,12 +43,12 @@ cd your-app
 ### 3. Copy the agent config into the target repo
 
 ```bash
-cp -R /path/to/cr-skill/.cursor ./.cursor
+cp -R /path/to/cr-skills/.cursor ./.cursor
 ```
 
 ### 4. Open the target repo in Cursor
 
-Open `your-app` as the workspace (not `cr-skill`).
+Open `your-app` as the workspace (not `cr-skills`).
 
 ### 5. Run the review
 
@@ -74,11 +77,11 @@ open CODE-REVIEW.html
 ## Workflow (all agents)
 
 ```text
-Clone cr-skill → copy agent folder into target repo → open target repo → /code-review + topics → CODE-REVIEW.html
+Clone cr-skills → copy .cursor into target repo → open target repo → /code-review + topics → CODE-REVIEW.html
 ```
 
 1. **You** provide the repository (clone and open it).
-2. **You** copy the agent folder from `cr-skill` into that repo.
+2. **You** copy the agent folder from `cr-skills` into that repo.
 3. **Agent** detects stack from files (`package.json`, Docker, ORM, etc.).
 4. **You** share topics (or answer when asked).
 5. **Agent** reviews only those topics and writes `CODE-REVIEW.html`.
@@ -92,7 +95,7 @@ This repo ships **Cursor** config under `.cursor/`. For other tools, copy or ada
 ### Cursor (default)
 
 ```bash
-cp -R /path/to/cr-skill/.cursor ./.cursor
+cp -R /path/to/cr-skills/.cursor ./.cursor
 ```
 
 Then run `/code-review` in Agent chat.
@@ -102,7 +105,7 @@ Then run `/code-review` in Agent chat.
 Copy to the **root** of the repo under review:
 
 ```bash
-cp /path/to/cr-skill/templates/antigravity/GEMINI.md ./GEMINI.md
+cp /path/to/cr-skills/templates/antigravity/GEMINI.md ./GEMINI.md
 ```
 
 Start a chat:
@@ -115,14 +118,14 @@ If your build only has project instructions, paste `GEMINI.md` there.
 
 ```bash
 mkdir -p .claude/skills/topic-code-review
-cp /path/to/cr-skill/.cursor/skills/topic-code-review/SKILL.md .claude/skills/topic-code-review/
-cp /path/to/cr-skill/.cursor/skills/topic-code-review/html-template.html .claude/skills/topic-code-review/
+cp /path/to/cr-skills/.cursor/skills/topic-code-review/SKILL.md .claude/skills/topic-code-review/
+cp /path/to/cr-skills/.cursor/skills/topic-code-review/html-template.html .claude/skills/topic-code-review/
 ```
 
-Optional pointer at repo root:
+Optional pointer at repo root (copy `SKILL.md` into project instructions if this file is not in the repo yet):
 
 ```bash
-cp /path/to/cr-skill/templates/claude/CLAUDE.md ./CLAUDE.md
+cp /path/to/cr-skills/.cursor/skills/topic-code-review/SKILL.md ./CLAUDE.md
 ```
 
 Ask: *Run code review using topic-code-review skill. Ask for my topics.*
@@ -160,7 +163,7 @@ Review **only topics you share**. Examples: [`examples/topic-lists.md`](examples
 ## Repository layout
 
 ```text
-cr-skill/
+cr-skills/
 ├── README.md
 ├── .gitignore
 ├── .cursor/
@@ -170,8 +173,7 @@ cr-skill/
 │       └── html-template.html
 ├── examples/topic-lists.md
 └── templates/
-    ├── antigravity/GEMINI.md
-    └── claude/CLAUDE.md
+    └── antigravity/GEMINI.md
 ```
 
 ---
@@ -186,7 +188,6 @@ For **Web Accessibility** or **UI/UX** topics, provide a running app URL when as
 
 | Gap | Plan |
 |-----|------|
-| GitHub publish | Push repo; link from team docs |
 | Claude paths | Confirm `.claude/skills/` for your version |
 | Antigravity command | Use `GEMINI.md` + natural language |
 | CI validation | Lint skill files on PR |
@@ -197,7 +198,7 @@ For **Web Accessibility** or **UI/UX** topics, provide a running app URL when as
 
 ## Tips
 
-- Open the **target app repo** as the workspace, not `cr-skill`.
+- Open the **target app repo** as the workspace, not `cr-skills`.
 - Add `CODE-REVIEW.html` to the target `.gitignore` if you do not want it committed.
 - Redact secrets before reviewing repos with `.env` files.
 - Monorepos: say *focus on `backend/`* or *primary stack is NestJS*.

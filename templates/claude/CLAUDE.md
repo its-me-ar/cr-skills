@@ -7,4 +7,4 @@ When the user asks for a **code review**, runs **`/code-review`**, or shares rev
 3. **Topics come from the user** — review only those topics. If none were given, ask first.
 4. Write **`CODE-REVIEW.html`** at the repo root (14px headings, 12px body). Confirm the path in chat; do not dump HTML.
 
-Scoring: 1–4 per topic. Sections: Strengths / Improvements / Suggestions. No `Context:` lines.
+Scoring: 1–4 per topic. Overall Rating (EXCELLENT / GOOD / POOR) based on average score (reference: <2.6 POOR, 2.6–3.5 GOOD, >3.5 EXCELLENT) finalized using intuition. Sections: Strengths / Improvements / Suggestions. No `Context:` lines.

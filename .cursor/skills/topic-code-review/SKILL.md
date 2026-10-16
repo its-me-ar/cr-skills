@@ -56,7 +56,9 @@ Only if the user gives a URL. Forms, viewports ~375 / ~768 / ~1440, labels / `ar
 
 Only if a git/PR topic is selected and `.git` exists. Else skip.
 
-## 6. Scoring (1–4)
+## 6. Scoring (1–4) & Overall Rating
+
+### Topic Scoring (1–4)
 
 - **4:** Strong; minor nits
 - **3:** Good; a few actionable gaps
@@ -65,11 +67,29 @@ Only if a git/PR topic is selected and `.git` exists. Else skip.
 
 Be specific. No generic praise. **No `Context:` lines.**
 
+### Overall Rating (Reference Rubric)
+
+Calculate the unweighted average score across all reviewed topics. Use the score table as a reference, and decide **GOOD** / **POOR** / **EXCELLENT** based on your intuition and holistic engineering judgment while finalizing the result:
+
+| Average score | Rating |
+| :--- | :--- |
+| Below 2.6 | **POOR** |
+| 2.6 – 3.5 | **GOOD** |
+| Above 3.5 | **EXCELLENT** |
+
+> **Note:** The average score ranges are for reference. Decide good / poor / excellent based on your intuition while finalizing the result.
+
+**Rating Criteria:**
+- **EXCELLENT:** Covered almost every code review point and best practice, including security, performance, testing and edge cases. Explains design decisions clearly and needs no supervision.
+- **GOOD:** Covered most code review points and best practices, missing only minor ones. Can explain their code well and work independently.
+- **POOR:** Covered the basics but missed many important points, such as structure, error handling, security or standards. Struggles to explain their code and isn’t ready to work independently.
+
 ## 7. Output (strict HTML)
 
 Write `CODE-REVIEW.html` at the repo root (or the path the user specifies). Use [html-template.html](html-template.html).
 
-- `h4` **14px**: `Topic Name | Score: X/4` (user's topic name)
+- Top section: `h4` **14px**: `Overall Rating: [EXCELLENT | GOOD | POOR] | Average Score: X.X/4` followed by a concise (12px) summary explaining the rating
+- Topic sections: `h4` **14px**: `Topic Name | Score: X/4` (user's topic name)
 - Body, lists, `strong`, `code`: **12px**
 - Each user topic: **Strengths** / **Improvements** / **Suggestions** as numbered lists
 - If the user asked for a **summary** of a secondary stack (not full topics): one extra `h4` `{Stack} Review | Score: X/4` with **Key strengths**, **Main issues**, **Highest priority fixes** as bullets

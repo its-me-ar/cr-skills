@@ -14,12 +14,16 @@
 3. Browser checks only if the user gave a URL and UI/a11y is in scope.
 4. Git/PR checks only if a git-related topic was selected and `.git` exists.
 5. Score each topic **1–4** (4 = strong, 1 = critical). No generic praise. No `Context:` lines.
+6. Calculate average score and finalize Overall Rating (**EXCELLENT**, **GOOD**, **POOR**). The score ranges are for reference; decide based on your intuition:
+   - Below 2.6: **POOR** — Covered the basics but missed many important points, such as structure, error handling, security or standards. Struggles to explain their code and isn’t ready to work independently.
+   - 2.6 – 3.5: **GOOD** — Covered most code review points and best practices, missing only minor ones. Can explain their code well and work independently.
+   - Above 3.5: **EXCELLENT** — Covered almost every code review point and best practice, including security, performance, testing and edge cases. Explains design decisions clearly and needs no supervision.
 
 ## Output
 
 Write **`CODE-REVIEW.html`** at the repo root:
 
-- Headings (`h4`): **14px** — `Topic Name | Score: X/4`
+- Headings (`h4`): **14px** — `Overall Rating: [EXCELLENT | GOOD | POOR] | Average Score: X.X/4` (at top), `Topic Name | Score: X/4`
 - Body, lists, code: **12px**
 - Per topic: **Strengths**, **Improvements**, **Suggestions** (numbered lists)
 - Optional one-line intro: detected stack(s)

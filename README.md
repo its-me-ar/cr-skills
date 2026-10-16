@@ -131,7 +131,7 @@ Or with topics:
 | `examples/topic-lists.md` | NestJS, Angular, K8s, Go, generic menus |
 | `install.mjs` | Cross-platform copy into any repo |
 
-Each topic: **Strengths**, **Improvements**, **Suggestions**, score **1–4**.
+Each topic: **Strengths**, **Improvements**, **Suggestions**, score **1–4**, plus an **Overall Rating** (**EXCELLENT** / **GOOD** / **POOR**).
 
 ---
 
@@ -204,9 +204,14 @@ Includes NestJS, Angular, Kubernetes, Go, and generic lists.
 ## Report format
 
 - **File:** `CODE-REVIEW.html` (repo root)
-- **Headings:** 14px — `Topic Name | Score: X/4`
+- **Headings:** 14px — `Overall Rating: [EXCELLENT | GOOD | POOR] | Average Score: X.X/4`, `Topic Name | Score: X/4`
 - **Body:** 12px — Strengths / Improvements / Suggestions
-- **Scoring:** 1 = critical → 4 = strong
+- **Topic Scoring:** 1 = critical → 4 = strong
+- **Overall Rating (Reference Rubric):**
+  - **EXCELLENT** (Average > 3.5): Covered almost every code review point and best practice, including security, performance, testing and edge cases. Explains design decisions clearly and needs no supervision.
+  - **GOOD** (Average 2.6 – 3.5): Covered most code review points and best practices, missing only minor ones. Can explain their code well and work independently.
+  - **POOR** (Average < 2.6): Covered the basics but missed many important points, such as structure, error handling, security or standards. Struggles to explain their code and isn’t ready to work independently.
+  *(Note: The average score ranges serve as reference; final rating is decided based on intuition while finalizing the result).*
 
 ---
 

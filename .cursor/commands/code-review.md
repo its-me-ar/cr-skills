@@ -13,6 +13,6 @@ $ARGUMENTS
 Then:
 1. Detect stack and entry points.
 2. Static review of user topics only (optional browser if URL given; git only if that topic is selected).
-3. Score 1–4. No Context lines.
-4. Write `CODE-REVIEW.html` (h4 = 14px, body = 12px) from `.cursor/skills/topic-code-review/html-template.html`.
+3. Score 1–4 per topic. Calculate average score and determine Overall Rating (EXCELLENT, GOOD, POOR) using reference ranges (<2.6 POOR, 2.6–3.5 GOOD, >3.5 EXCELLENT) and your intuition. No Context lines.
+4. Write `CODE-REVIEW.html` (h4 = 14px, body = 12px) from `.cursor/skills/topic-code-review/html-template.html` including Overall Rating & Average Score.
 5. Chat: confirm the file path only.

@@ -93,3 +93,18 @@ List full backend topics, then add one line in chat:
 - Reliability & Maintainability
 - Production Readiness
 - Package Dependency Audit
+
+## AI RAG / LLM application (Python, FastAPI, LangGraph, vector DB)
+
+- Project Structure and Setup
+- Code Quality and Maintainability
+- Architecture and Design Patterns
+- Error Handling and Resilience
+- Security and Input Validation
+- Database Design and Data Access
+- GenAI and LLM Integration
+- Testing Strategy and Verification
+- Containerization and Deployment
+- Frontend Integration and Streaming
+
+Typical checks for these topics: RAG pipeline (ingestion, chunking, embeddings, vector store, similarity thresholds), Text-to-SQL safety (AST validation, read-only enforcement, row limits, statement timeouts), prompt injection and context flooding, agent/graph routing used consistently by sync and streaming paths, checkpoint/state persistence (no `pickle`, bounded memory), path traversal on upload/delete endpoints, blocking I/O inside async handlers, mocked vs real-model tests, and local model (Ollama) bootstrap in Docker.

@@ -46,6 +46,7 @@ In the HTML you may add one short intro line (12px) naming detected stack(s) and
    - Errors: global handlers, leaked internals
    - Tests: smoke-only vs behavior; e2e matching real bootstrap
    - DevOps: prod CMD vs `dev` server in Docker; CI; exposed ports
+   - GenAI / RAG: prompt injection, unbounded LLM context (row caps, truncation), Text-to-SQL validation (AST, read-only, timeouts), vector store thresholds, `pickle` in state persistence, blocking I/O in async handlers, agent graph bypassed by streaming paths
 4. Engineering bar when a quality/standards topic is selected: tests on critical paths, layering, no secrets in git, HACK/FIXME, dead code, generic names.
 
 ## 4. Phase B — Browser

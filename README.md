@@ -128,7 +128,7 @@ Or with topics:
 | `/code-review` command | Starts the review workflow |
 | `topic-code-review` skill | Detect stack, score topics, write HTML |
 | `html-template.html` | Report layout (14px headings, 12px body) |
-| `examples/topic-lists.md` | NestJS, Angular, K8s, Go, generic menus |
+| `examples/topic-lists.md` | NestJS, Angular, K8s, Go, AI RAG / LLM, generic menus |
 | `install.mjs` | Cross-platform copy into any repo |
 
 Each topic: **Strengths**, **Improvements**, **Suggestions**, score **1–4**, plus an **Overall Rating** (**EXCELLENT** / **GOOD** / **POOR**).
@@ -197,7 +197,7 @@ Paste `.cr-skills/.cursor/skills/topic-code-review/SKILL.md` as your first messa
 
 Examples: [`examples/topic-lists.md`](examples/topic-lists.md) (also at `.cr-skills/examples/topic-lists.md` after install).
 
-Includes NestJS, Angular, Kubernetes, Go, and generic lists.
+Includes NestJS, Angular, Kubernetes, Go, AI RAG / LLM, and generic lists.
 
 ---
 
